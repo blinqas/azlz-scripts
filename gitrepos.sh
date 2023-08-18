@@ -47,6 +47,10 @@ clone_repos_for_org "azure" \
     "azure-cli" \
     "azure-rest-api-specs"
 
+# Cloning repos from Hashicorp
+clone_repos_for_org "hashicorp" \
+    "terraform-provider-azurerm"
+
 # Setting global git config
 if [ "$#" -eq 2 ]; then
     git config --global user.name "$1"
