@@ -21,10 +21,6 @@ clone_repos_for_org() {
     done
 }
 
-# Setting global git config
-git config --global user.name "$1"
-git config --global user.email "$2"
-
 # Cloning repos from blinqas
 clone_repos_for_org "blinqas" \
     "caf-terraform-landingzones" \
@@ -50,3 +46,9 @@ clone_repos_for_org "azure" \
     "terraform-azurerm-caf-enterprise-scale" \
     "azure-cli" \
     "azure-rest-api-specs"
+
+# Setting global git config
+if [ "$#" -eq 2 ]; then
+    git config --global user.name "$1"
+    git config --global user.email "$2"
+fi
